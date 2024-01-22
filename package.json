@@ -1,12 +1,12 @@
 {
-  "name": "climate-change-api",
+  "name": "crypto-price-api",
   "version": "1.0.0",
   "description": "",
-  "main": "trial.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon trial.js"
+    "start": "nodemon index.js"
   },
-  "author": "ania kubow",
+  "author": "Daniel Teddy",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.4",

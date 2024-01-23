@@ -10,11 +10,11 @@ const newspapers = [
         address: 'https://coinmarketcap.com/community/articles/',
         base: 'https://coinmarketcap.com'
     },
-    {
-        name: 'coingecko',
-        address: 'https://www.coingecko.com/en/news',
-        base: ''
-    },
+    // {
+    //     name: 'coingecko',
+    //     address: 'https://www.coingecko.com/en/news',
+    //     base: ''
+    // },
     {
         name: 'cryptonews',
         address: 'https://cryptonews.com/news/',
@@ -46,8 +46,9 @@ newspapers.forEach(newspaper => {
 })
 
 app.get('/', (req, res) => {
-    res.json('Welcome to my Crypto News API')
-})
+    res.json('Welcome to my Crypto News API\n\nGo to \n /news to see news articles \n');
+  });
+  
 
 app.get('/news', (req, res) => {
     res.json(articles)

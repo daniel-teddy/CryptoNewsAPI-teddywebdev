@@ -61,7 +61,7 @@ const extractArticleDetails = (articleElement, base) => {
 
     articles.push({
         title,
-        url: base + url,
+        url: url,
         imageUrl,
         category,
         date,

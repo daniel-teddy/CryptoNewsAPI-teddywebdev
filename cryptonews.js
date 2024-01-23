@@ -79,7 +79,7 @@ const extractNewsOneDetails = (articleElement, base) => {
     
     articles.push({
         title,
-        url: base + url,
+        url: url,
         imageUrl,
         category,
         date,

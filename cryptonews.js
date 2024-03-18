@@ -102,6 +102,7 @@ const fetchAllArticles = async () => {
 const events = [
   {
     eventId: 1,
+    category: "category",
     eventLocalAddress: "local address",
     eventName: "Orange Festival",
     Description:
@@ -123,6 +124,7 @@ const events = [
   },
   {
     eventId: 2,
+    category: "category",
     eventLocalAddress: "local address",
     eventName: "Tatlisu Carob Festival",
     Description:
@@ -144,6 +146,7 @@ const events = [
   },
   {
     eventId: 3,
+    category: "category",
     eventLocalAddress: "local address",
     eventName: "Eco Day Fest",
     Description:
@@ -165,6 +168,7 @@ const events = [
   },
   {
     eventId: 4,
+    category: "category",
     eventLocalAddress: "local address",
     eventName: "Kite Festival",
     Description:
@@ -186,6 +190,7 @@ const events = [
   },
   {
     eventId: 5,
+    category: "category",
     eventLocalAddress: "local address",
     eventName: "2nd International Student Congress",
     Description: "Migration and Health Perspectives",

@@ -102,7 +102,8 @@ const fetchAllArticles = async () => {
 const events = [
   {
     eventId: 1,
-    Name: "Orange Festival",
+    eventLocalAddress: "local address",
+    eventName: "Orange Festival",
     Description:
       "Since 1977, this event held by Guzelyurt Municipality, has been the venue for a festival that originally celebrated the orange harvest.",
     date_range: {
@@ -111,12 +112,19 @@ const events = [
     },
     image:
       "https://www.visitncy.com/wp-content/uploads/2020/02/Orange-Festival-9.jpg",
-    location: "https://goo.gl/maps/BiFJydpqabtS4iie8",
+    location: {
+      link: "https://goo.gl/maps/BiFJydpqabtS4iie8",
+      local_range: {
+        latitude: "2024-09-05",
+        longitude: "2024-09-06",
+      },
+    },
     added_by_user: 1,
   },
   {
     eventId: 2,
-    Name: "Tatlisu Carob Festival",
+    eventLocalAddress: "local address",
+    eventName: "Tatlisu Carob Festival",
     Description:
       "This annual festival held by the Tatlisu Municipality contributes to the promotion of the region and the continuation of carob and molasses production.",
     date_range: {
@@ -125,12 +133,19 @@ const events = [
     },
     image:
       "https://www.visitncy.com/wp-content/uploads/2020/02/Orange-Festival-9.jpg",
-    location: "https://goo.gl/maps/gqCneKW9RvNaEkGQ8",
+    location: {
+      link: "https://goo.gl/maps/gqCneKW9RvNaEkGQ8",
+      local_range: {
+        latitude: "2024-09-05",
+        longitude: "2024-09-06",
+      },
+    },
     added_by_user: 2,
   },
   {
     eventId: 3,
-    Name: "Eco Day Fest",
+    eventLocalAddress: "local address",
+    eventName: "Eco Day Fest",
     Description:
       "North Cyprus is a prime spot for due to its unspoilt nature and prominence local life, and a destination that truly takes you far away from the hum of fast-paced western culture.",
     date_range: {
@@ -139,12 +154,19 @@ const events = [
     },
     image:
       "https://www.visitncy.com/wp-content/uploads/2020/02/join-ecotourismfest.jpg",
-    location: "https://goo.gl/maps/iCSBe1GNixhoojqt5",
+    location: {
+      link: "https://goo.gl/maps/iCSBe1GNixhoojqt5",
+      local_range: {
+        latitude: "2024-09-05",
+        longitude: "2024-09-06",
+      },
+    },
     added_by_user: 3,
   },
   {
     eventId: 4,
-    Name: "Kite Festival",
+    eventLocalAddress: "local address",
+    eventName: "Kite Festival",
     Description:
       "In April, North Cyprus celebrates the Kite Festival, where hundreds of kites take to the sky. It is a colourful event that is popular with both locals and tourists.",
     date_range: {
@@ -153,12 +175,19 @@ const events = [
     },
     image:
       "https://www.cyprusparadise.com/media/17494/kite-festival-north-cyprus.jpg",
-    location: "https://bit.ly/43lB37t",
+    location: {
+      link: "https://bit.ly/43lB37t",
+      local_range: {
+        latitude: "2024-09-05",
+        longitude: "2024-09-06",
+      },
+    },
     added_by_user: 4,
   },
   {
     eventId: 5,
-    Name: "2nd International Student Congress",
+    eventLocalAddress: "local address",
+    eventName: "2nd International Student Congress",
     Description: "Migration and Health Perspectives",
     date_range: {
       start_date: "2024-04-25",
@@ -166,7 +195,13 @@ const events = [
     },
     image:
       "https://neu.edu.tr/wp-content/uploads/2024/02/07/2._Uluslararasi_Ogrenci_Kongresi_eng_kopya.jpg?ver=c4c9a6e73985515e376cb8aeb29bb6f0",
-    location: "https://bit.ly/3v8Ny9O",
+    location: {
+      link: "https://bit.ly/3v8Ny9O",
+      local_range: {
+        latitude: "2024-09-05",
+        longitude: "2024-09-06",
+      },
+    },
     added_by_user: 5,
   },
 ];

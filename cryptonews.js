@@ -40,15 +40,22 @@ const productLinks = [
     address: "https://bzmhsp.page.link/z9BSW",
     base: "https://bzmhsp.page.link/z9BSW",
   },
+  {
+    name: "pm3",
+    address: "https://bzmhsp.page.link/VP1KE",
+    base: "https://bzmhsp.page.link/VP1KE",
+  },
 ];
 
 const extractProductsDetails = (tbodyElement) => {
   const title = tbodyElement.find("h4").text();
   const imageUrl = tbodyElement.find("img").attr("src");
+  const price = tbodyElement.find("strong").text();
 
   productDef.push({
     title,
     imageUrl,
+    price,
   });
 };
 

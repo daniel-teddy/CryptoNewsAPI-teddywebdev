@@ -27,6 +27,60 @@ const newspapers = [
   },
 ];
 
+const productDef = [];
+const productLinks = [
+  {
+    name: "pm1",
+    address:
+      "https://bizimhesap.com/web/ngn/ext/catalogdisplay?rc=1&guid=3E4E9FDEECD7480DA8F56B4FA5C5F923",
+    base: "https://bizimhesap.com/web/ngn/ext/catalogdisplay?rc=1&guid=3E4E9FDEECD7480DA8F56B4FA5C5F923",
+  },
+  {
+    name: "pm2",
+    address: "https://bzmhsp.page.link/z9BSW",
+    base: "https://bzmhsp.page.link/z9BSW",
+  },
+];
+
+const extractProductsDetails = (tbodyElement) => {
+  const title = tbodyElement.find("h4").text();
+  const imageUrl = tbodyElement.find("img").attr("src");
+
+  productDef.push({
+    title,
+    imageUrl,
+  });
+};
+
+const fetchProducts = async (productLink) => {
+  try {
+    const response = await axios.get(productLink.address);
+    const html = response.data;
+    const $ = cheerio.load(html);
+
+    // Handle articles within <article> tags
+    $("tbody", html).each(function () {
+      const tbodyElement = $(this);
+      extractProductsDetails(tbodyElement);
+    });
+
+    // Handle articles within <div class="news-one"> tags
+    // $("div.news-one", html).each(function () {
+    //   const articleElement = $(this);
+    //   extractNewsOneDetails(articleElement, productLinks.base);
+    // });
+  } catch (error) {
+    console.error(
+      `Error fetching articles for ${productLink.name}: ${error.message}`
+    );
+  }
+};
+
+const fetchAllProducts = async () => {
+  for (const productLink of productLinks) {
+    await fetchProducts(productLink);
+  }
+};
 const articles = [];
 
 const fetchArticles = async (newspaper) => {
@@ -216,6 +270,10 @@ app.get("/", (req, res) => {
   );
 });
 
+app.get("/products", async (req, res) => {
+  await fetchAllProducts();
+  res.json(productDef);
+});
 app.get("/news", async (req, res) => {
   await fetchAllArticles();
   res.json(articles);

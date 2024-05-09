@@ -2,9 +2,9 @@
   "name": "crypto-price-api",
   "version": "1.0.0",
   "description": "",
-  "main": "crit.js",
+  "main": "places.js",
   "scripts": {
-    "start": "nodemon crit.js"
+    "start": "nodemon places.js"
   },
   "author": "Daniel Teddy",
   "license": "ISC",

@@ -2,9 +2,9 @@
   "name": "crypto-price-api",
   "version": "1.0.0",
   "description": "",
-  "main": "cryptonews.js",
+  "main": "crit.js",
   "scripts": {
-    "start": "nodemon cryptonews.js"
+    "start": "nodemon crit.js"
   },
   "author": "Daniel Teddy",
   "license": "ISC",
@@ -13,6 +13,7 @@
     "cheerio": "^1.0.0-rc.10",
     "express": "^4.17.1",
     "moment": "^2.30.1",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "playwright": "^1.43.1"
   }
 }

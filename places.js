@@ -24,68 +24,32 @@ app.get("/", (req, res) => {
   );
 });
 
-// Endpoint to return all places in a single array
-app.get("/places-data/all", async (req, res) => {
-  try {
-    res.json(allPlaces);
-  } catch (err) {
-    console.error("Error sending all places data:", err);
-    res.status(500).json({ error: "Internal server error" });
-  }
+app.get("/places-data/all", (req, res) => {
+  res.json(allPlaces);
 });
 
-app.get("/places-data/museums", async (req, res) => {
-  try {
-    res.json(museums);
-  } catch (err) {
-    console.error("Error sending museums data:", err);
-    res.status(500).json({ error: "Internal server error" });
-  }
+app.get("/places-data/museums", (req, res) => {
+  res.json(museums);
 });
 
-app.get("/places-data/restaurants", async (req, res) => {
-  try {
-    res.json(restaurants);
-  } catch (err) {
-    console.error("Error sending restaurants data:", err);
-    res.status(500).json({ error: "Internal server error" });
-  }
+app.get("/places-data/restaurants", (req, res) => {
+  res.json(restaurants);
 });
 
-app.get("/places-data/hospitals", async (req, res) => {
-  try {
-    res.json(hospitals);
-  } catch (err) {
-    console.error("Error sending hospitals data:", err);
-    res.status(500).json({ error: "Internal server error" });
-  }
+app.get("/places-data/hospitals", (req, res) => {
+  res.json(hospitals);
 });
 
-app.get("/places-data/hotels", async (req, res) => {
-  try {
-    res.json(hotels);
-  } catch (err) {
-    console.error("Error sending hotels data:", err);
-    res.status(500).json({ error: "Internal server error" });
-  }
+app.get("/places-data/hotels", (req, res) => {
+  res.json(hotels);
 });
 
-app.get("/places-data/officials", async (req, res) => {
-  try {
-    res.json(officials);
-  } catch (err) {
-    console.error("Error sending officials data:", err);
-    res.status(500).json({ error: "Internal server error" });
-  }
+app.get("/places-data/officials", (req, res) => {
+  res.json(officials);
 });
 
-app.get("/places-data/pharmacies", async (req, res) => {
-  try {
-    res.json(pharmacies);
-  } catch (err) {
-    console.error("Error sending pharmacies data:", err);
-    res.status(500).json({ error: "Internal server error" });
-  }
+app.get("/places-data/pharmacies", (req, res) => {
+  res.json(pharmacies);
 });
 
 app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));

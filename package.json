@@ -2,9 +2,9 @@
   "name": "crypto-price-api",
   "version": "1.0.0",
   "description": "",
-  "main": "cryptonews.js",
+  "main": "houselisting.js",
   "scripts": {
-    "start": "nodemon cryptonews.js"
+    "start": "nodemon houselisting.js"
   },
   "author": "Daniel Teddy",
   "license": "ISC",

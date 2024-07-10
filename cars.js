@@ -89,7 +89,7 @@ const fetchAllArticles = async (page) => {
 };
 
 app.get('/', (req, res) => {
-    res.json('Welcome to my House Listings API\n\nGo to \n /houses to see house listings \n');
+    res.json('Welcome to my cars Listings API\n\nGo to \n /cars to see cars listings \n');
 });
 
 app.get('/cars', async (req, res) => {

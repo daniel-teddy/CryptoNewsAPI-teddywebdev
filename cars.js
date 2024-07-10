@@ -10,24 +10,24 @@ app.use(cors());
 const newspapers = [
     {
         name: 'cars',
-        address: 'https://www.motukanayo.com/petites-annonces-voitures   ',
-        base: 'https://www.motukanayo.com/'
+        address: 'https://cd.coinafrique.com/categorie/voitures',
+        base: 'https://cd.coinafrique.com/'
     },
-    {
-        name: 'cars',
-        address: 'https://www.motukanayo.com/petites-annonces-voitures?page=2',
-        base: 'https://www.motukanayo.com/'
-    },
-    {
-        name: 'cars',
-        address: 'https://www.motukanayo.com/petites-annonces-voitures?page=3',
-        base: 'https://www.motukanayo.com/'
-    },
-    {
-        name: 'cars',
-        address: 'https://www.motukanayo.com/petites-annonces-voitures?page=4',
-        base: 'https://www.motukanayo.com/'
-    },
+    // {
+    //     name: 'cars',
+    //     address: 'https://www.motukanayo.com/petites-annonces-voitures?page=2',
+    //     base: 'https://www.motukanayo.com/'
+    // },
+    // {
+    //     name: 'cars',
+    //     address: 'https://www.motukanayo.com/petites-annonces-voitures?page=3',
+    //     base: 'https://www.motukanayo.com/'
+    // },
+    // {
+    //     name: 'cars',
+    //     address: 'https://www.motukanayo.com/petites-annonces-voitures?page=4',
+    //     base: 'https://www.motukanayo.com/'
+    // },
 ];
 
 let articles = [];
@@ -38,7 +38,7 @@ const fetchArticles = async (newspaper) => {
         const html = response.data;
         const $ = cheerio.load(html);
 
-        $('div.item-wrap', html).each(function () {
+        $('div.card', html).each(function () {
             const articleElement = $(this);
             extractArticleDetails(articleElement, newspaper.base);
         });
@@ -48,31 +48,31 @@ const fetchArticles = async (newspaper) => {
 };
 
 const extractArticleDetails = (articleElement) => {
-    const price = articleElement.find('li.item-price').text();
-    const address = articleElement.find('address.item-address').text();
-    const imageUrl = articleElement.find('img.img-fluid').attr('data-src');
-    const category = articleElement.find('li.h-type').find('span').text().trim();
-    const shortDescription = articleElement.find('h2.item-title').find('a').text().trim();
-    const whatsapp = articleElement.find('a.btn-item').attr('href');
-    const beds = articleElement.find('li.h-beds').find('.hz-figure').text();
-    const garage = articleElement.find('li.h-cars').find('.hz-figure').text();
-    const bathroom = articleElement.find('li.h-baths').find('.hz-figure').text();
+    const price = articleElement.find('p.ad__card-price').text();
+    const address = articleElement.find('p.ad__card-location').find('span').text().trim();
+    const imageUrl = articleElement.find('img.ad__card-img').attr('src');
+    // const category = articleElement.find('li.h-type').find('span').text().trim();
+    const shortDescription = articleElement.find('p.ad__card-description').find('a').text().trim();
+    // const whatsapp = articleElement.find('a.btn-item').attr('href');
+    // const beds = articleElement.find('li.h-beds').find('.hz-figure').text();
+    // const garage = articleElement.find('li.h-cars').find('.hz-figure').text();
+    // const bathroom = articleElement.find('li.h-baths').find('.hz-figure').text();
 
-    const details = [];
-    details.push({
-        beds,
-        bathroom,
-        garage
-    });
+    // const details = [];
+    // details.push({
+    //     beds,
+    //     bathroom,
+    //     garage
+    // });
 
     articles.push({
         price,
         imageUrl,
         address,
-        category,
+        // category,
         shortDescription,
-        whatsapp,
-        details,
+        // whatsapp,
+        // details,
     });
 };
 
@@ -92,7 +92,7 @@ app.get('/', (req, res) => {
     res.json('Welcome to my House Listings API\n\nGo to \n /houses to see house listings \n');
 });
 
-app.get('/houses', async (req, res) => {
+app.get('/cars', async (req, res) => {
     const page = parseInt(req.query.page) || 1;
     const paginatedArticles = await fetchAllArticles(page);
     res.json(paginatedArticles);

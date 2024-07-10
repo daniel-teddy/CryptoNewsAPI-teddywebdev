@@ -2,9 +2,9 @@
   "name": "crypto-price-api",
   "version": "1.0.0",
   "description": "",
-  "main": "cryptonews.js",
+  "main": "cars.js",
   "scripts": {
-    "start": "nodemon cryptonews.js"
+    "start": "nodemon cars.js"
   },
   "author": "Daniel Teddy",
   "license": "ISC",

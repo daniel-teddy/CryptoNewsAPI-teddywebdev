@@ -2,7 +2,12 @@ const PORT = process.env.PORT || 8000;
 const express = require("express");
 const axios = require("axios");
 const cheerio = require("cheerio");
+const cors = require("cors"); // Import CORS
+
 const app = express();
+
+// Enable CORS for all origins
+app.use(cors());
 
 const link = {
   name: "sun doviz",
@@ -15,6 +20,7 @@ let lastUpdated;
 axios.get(link.address).then((response) => {
   const html = response.data;
   const $ = cheerio.load(html);
+
   const updateRow = $("tr").filter((_, el) => {
     const text = $(el).text();
     return text.includes("Son Güncelleme");
